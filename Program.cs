@@ -10,7 +10,11 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
+            var processor = new PhotoProcessor();
+            var filters = new PhotoFilters();
+            PhotoProcessor.PhotoFilterHandler filterHandler =  filters.ApplyBrightness;
 
+            processor.Process("photo.jpg", filterHandler);
         }
     }
 }
